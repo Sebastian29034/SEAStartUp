@@ -1,4 +1,4 @@
-#SEA Startup — Proyecto Web
+SEA Startup — Proyecto Web
 
 Equipo: Alexandra · Sebastián · Elkin
 Asignatura: Ingeniería Web
