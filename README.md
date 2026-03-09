@@ -1,3 +1,5 @@
+#SEA Startup — Proyecto Web
+
 Equipo: Alexandra · Sebastián · Elkin
 Asignatura: Ingeniería Web
 Entregable: Actividad práctica — HTML semántico y CSS
@@ -15,31 +17,38 @@ Explicación del código
 El archivo index.html está organizado utilizando etiquetas semánticas de HTML5 para mantener una estructura clara y comprensible.
 
 Estructura principal
-
 <header>
+
 Contiene el encabezado del sitio, incluyendo el logo del proyecto y el menú de navegación que permite acceder a las diferentes secciones.
 
 <main>
+
 Agrupa todo el contenido principal del sitio web.
 
 Dentro de este elemento se encuentran varias secciones:
 
 <section id="inicio">
+
 Presenta la idea principal del proyecto y explica el objetivo de SEA Startup.
 
 <section id="historia">
+
 Describe el origen del equipo y cómo surgió la idea de crear la plataforma.
 
 <section id="servicios">
+
 Muestra los servicios o soluciones digitales que el proyecto busca ofrecer.
 
 <section id="equipo">
+
 Incluye los perfiles de los integrantes del equipo, cada uno con acceso a su página personal.
 
 <section id="contenido-academico">
+
 Contiene explicaciones relacionadas con ingeniería web, incluyendo temas como semántica HTML, selectores CSS y metodologías de diseño.
 
 <footer>
+
 Muestra información de derechos de autor, enlaces adicionales y créditos del equipo.
 
 Páginas individuales del equipo
@@ -82,13 +91,13 @@ Este proyecto nos permitió comprender mejor cómo se construye la estructura de
 
 También aprendimos a trabajar con:
 
-especificidad en CSS, entendiendo cómo el navegador decide qué estilos aplicar;
+Especificidad en CSS, entendiendo cómo el navegador decide qué estilos aplicar.
 
-pseudo-clases como :hover, para crear interacciones visuales;
+Pseudo-clases como :hover, para crear interacciones visuales.
 
-pseudo-elementos como ::before y ::after, que permiten agregar contenido visual desde CSS;
+Pseudo-elementos como ::before y ::after, que permiten agregar contenido visual desde CSS.
 
-y la metodología Mobile-First, que prioriza el diseño para dispositivos móviles antes de adaptarlo a pantallas más grandes.
+Metodología Mobile-First, que prioriza el diseño para dispositivos móviles antes de adaptarlo a pantallas más grandes.
 
 Dificultades que tuvimos
 
