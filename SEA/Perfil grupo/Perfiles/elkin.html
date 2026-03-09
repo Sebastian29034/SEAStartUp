@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Elkin Andres Aldana Villafañe</title>
+
+  <!-- Fuentes de SEA Startup -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ════════════════════════════════════════════════
+       Blog Personal — Elkin Andres Aldana Villafañe
+       Reglas del profesor:
+       - Solo selectores de tipo y pseudo-clases (sin clases ni IDs extra)
+       - Galería con :hover
+       - Metodología Mobile-First
+       - Explicación de especificidad CSS y Mobile-First
+    ════════════════════════════════════════════════ */
+
+    /* ── Variables SEA Startup ── */
+    :root {
+      --negro:     #050a0e;
+      --oscuro:    #0d1b2a;
+      --card:      #111c2b;
+      --borde:     rgba(255,255,255,0.07);
+      --verde:     #00e5a0;
+      --verde2:    #00b87d;
+      --azul:      #0a84ff;
+      --texto:     #e2eaf2;
+      --muted:     #7a93aa;
+      --blanco:    #ffffff;
+      --ff-titulo: 'Syne', sans-serif;
+      --ff-cuerpo: 'Outfit', sans-serif;
+    }
+
+    /* ── Reset ── */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    ::selection {
+      background: var(--verde);
+      color: var(--negro);
+    }
+
+    /* ════════════════════════════════════
+       BODY — Mobile-First base
+    ════════════════════════════════════ */
+    body {
+      font-family: var(--ff-cuerpo);
+      background-color: var(--negro);
+      color: var(--texto);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Textura de ruido sutil */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    a {
+      color: var(--verde);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      opacity: 0.85;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ════════════════════════════════════
+       HEADER — Encabezado del blog
+    ════════════════════════════════════ */
+    header {
+      background: linear-gradient(160deg, var(--oscuro), var(--card));
+      border-bottom: 1px solid var(--borde);
+      padding: 3rem 1.5rem 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Pseudo-elemento ::before — línea degradada superior SEA */
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--verde), var(--azul));
+    }
+
+    /* Pseudo-elemento ::after — resplandor de fondo */
+    header::after {
+      content: '';
+      position: absolute;
+      top: -100px; left: 50%;
+      transform: translateX(-50%);
+      width: 500px; height: 400px;
+      background: radial-gradient(circle, rgba(0,229,160,0.08), transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    header nav {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 2rem;
+    }
+
+    header nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    header nav ul li a {
+      font-family: var(--ff-titulo);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+      padding: 0.4rem 1rem;
+      border: 1px solid var(--borde);
+      border-radius: 20px;
+      background: rgba(255,255,255,0.03);
+      transition: all 0.2s;
+      letter-spacing: 0.3px;
+    }
+
+    header nav ul li a:hover {
+      color: var(--negro);
+      background: var(--verde);
+      border-color: var(--verde);
+      text-decoration: none;
+    }
+
+    /* Enlace de volver al inicio con estilo especial */
+    header nav ul li:first-child a {
+      color: var(--verde);
+      border-color: rgba(0,229,160,0.3);
+      background: rgba(0,229,160,0.06);
+    }
+
+    header nav ul li:first-child a:hover {
+      color: var(--negro);
+      background: var(--verde);
+    }
+
+    header h1 {
+      font-family: var(--ff-titulo);
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 800;
+      color: var(--blanco);
+      letter-spacing: -1px;
+      line-height: 1.1;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 0.6rem;
+    }
+
+    /* Pseudo-elemento ::after en h1 — subrayado verde */
+    header h1::after {
+      content: '';
+      display: block;
+      width: 50px; height: 3px;
+      background: linear-gradient(90deg, var(--verde), var(--azul));
+      border-radius: 2px;
+      margin: 0.5rem auto 0;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: var(--muted);
+      font-weight: 300;
+      position: relative;
+      z-index: 1;
+      margin-top: 0.5rem;
+    }
+
+    /* Badge de estudiante */
+    header span {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--verde);
+      background: rgba(0,229,160,0.08);
+      border: 1px solid rgba(0,229,160,0.25);
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ════════════════════════════════════
+       MAIN — Contenido principal
+    ════════════════════════════════════ */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Secciones del blog ── */
+    section {
+      margin-bottom: 4rem;
+    }
+
+    /* Pseudo-elemento ::before en section — indicador lateral */
+    section::before {
+      content: '';
+      display: block;
+      width: 40px; height: 3px;
+      background: linear-gradient(90deg, var(--verde), var(--azul));
+      border-radius: 2px;
+      margin-bottom: 1rem;
+    }
+
+    /* ── Títulos h2 de cada sección ── */
+    h2 {
+      font-family: var(--ff-titulo);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--blanco);
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.3px;
+    }
+
+    /* ── Títulos h3 ── */
+    h3 {
+      font-family: var(--ff-titulo);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--verde);
+      margin-bottom: 0.6rem;
+      margin-top: 1.5rem;
+    }
+
+    h3:first-child {
+      margin-top: 0;
+    }
+
+    /* ── Párrafos ── */
+    p {
+      font-size: 0.97rem;
+      color: var(--muted);
+      font-weight: 300;
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    p strong {
+      color: var(--blanco);
+      font-weight: 600;
+    }
+
+    /* ── Etiqueta de código inline ── */
+    code {
+      font-size: 0.88em;
+      color: var(--verde);
+      background: rgba(0,229,160,0.08);
+      border: 1px solid rgba(0,229,160,0.15);
+      padding: 0.1rem 0.45rem;
+      border-radius: 5px;
+    }
+
+    /* ── Tarjeta contenedora para secciones ── */
+    article {
+      background: var(--card);
+      border: 1px solid var(--borde);
+      border-radius: 16px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Pseudo-elemento ::before en article — línea superior verde */
+    article::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--verde), var(--azul));
+    }
+
+    /* ════════════════════════════════════
+       SECCIÓN 1 — Título e introducción
+    ════════════════════════════════════ */
+    section:first-of-type article p:first-of-type {
+      font-size: 1.05rem;
+      color: var(--texto);
+      font-weight: 400;
+    }
+
+    /* ════════════════════════════════════
+       LISTAS — Selectores y conclusiones
+    ════════════════════════════════════ */
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    /* Pseudo-elemento ::before en li — punto verde */
+    ul li::before {
+      content: '›';
+      color: var(--verde);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-right: 0.6rem;
+    }
+
+    ul li {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.6;
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+    }
+
+    ul li strong {
+      color: var(--blanco);
+    }
+
+    /* ════════════════════════════════════
+       GALERÍA DE IMÁGENES
+       Regla del profesor: :hover cambia tamaño
+    ════════════════════════════════════ */
+    figure {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    /* Contenedor de la galería — Mobile-First: 1 columna */
+    section figure {
+      width: 100%;
+    }
+
+    /* Imágenes de la galería */
+    figure img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid var(--borde);
+      transition: transform 0.35s ease,
+                  box-shadow 0.35s ease,
+                  border-color 0.35s ease;
+      cursor: pointer;
+    }
+
+    /* Pseudo-clase :hover — cambia tamaño e ilumina */
+    figure img:hover {
+      transform: scale(1.06);
+      box-shadow: 0 12px 40px rgba(0,229,160,0.25);
+      border-color: var(--verde);
+    }
+
+    /* Pie de foto */
+    figure figcaption {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-style: italic;
+      text-align: center;
+    }
+
+    /* Contenedor de las 3 figuras — Mobile-First: columna */
+    section div {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* ════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════ */
+    footer {
+      background: var(--negro);
+      border-top: 1px solid var(--borde);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    footer p strong {
+      color: var(--verde);
+    }
+
+    footer nav {
+      margin-top: 1rem;
+    }
+
+    footer nav ul {
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0;
+    }
+
+    footer nav ul li::before {
+      display: none;
+    }
+
+    footer nav ul li a {
+      font-size: 0.82rem;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+
+    footer nav ul li a:hover {
+      color: var(--verde);
+      text-decoration: none;
+    }
+
+
+    /* ════════════════════════════════════
+       MEDIA QUERY — Escritorio
+       min-width: 768px
+    ════════════════════════════════════ */
+    @media (min-width: 768px) {
+
+      header {
+        padding: 4rem 2rem 3rem;
+      }
+
+      header h1 {
+        font-size: 3rem;
+      }
+
+      main {
+        padding: 4rem 2rem;
+      }
+
+      /* Galería en 3 columnas en escritorio */
+      section div {
+        flex-direction: row;
+        align-items: stretch;
+      }
+
+      section div figure {
+        flex: 1;
+      }
+
+      figure img {
+        height: 220px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════
+       HEADER — Encabezado del blog
+  ══════════════════════════════════ -->
+  <header>
+
+    <!-- Navegación de regreso al proyecto SEA -->
+    <nav>
+      <ul>
+        <li><a href="../../index.html">← Volver a SEA Startup</a></li>
+        <li><a href="../base.html">Perfil del Equipo</a></li>
+        <li><a href="https://github.com/Elkinn77" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://wa.me/573238031418" target="_blank" rel="noopener">💬 WhatsApp</a></li>
+      </ul>
+    </nav>
+
+    <h1>Elkin Andres Aldana Villafañe</h1>
+    <p>Blog de aprendizaje — Ingeniería de Software</p>
+    <span>Universidad Manuela Beltrán · 2025</span>
+
+  </header>
+
+
+  <!-- ══════════════════════════════════
+       MAIN — Contenido del blog
+  ══════════════════════════════════ -->
+  <main>
+
+    <!-- ══════════════════════════════════
+         SECCIÓN 1 — Sobre mí
+    ══════════════════════════════════ -->
+    <section>
+      <h2>👨‍🎓 Sobre mí</h2>
+      <article>
+        <p>
+          Soy un estudiante apasionado por la tecnología, especializado en el desarrollo de
+          aplicaciones web modernas y soluciones innovadoras. Me motiva crear herramientas
+          que mejoren la vida de las personas, aplicando buenas prácticas de programación
+          y metodologías ágiles.
+        </p>
+        <p>
+          Actualmente me enfoco en fortalecer mis conocimientos en
+          <strong>Java, Python y JavaScript</strong>, con interés en
+          <strong>inteligencia artificial</strong> y <strong>ciberseguridad</strong>.
+          Soy parte del equipo <strong>SEA Startup</strong>, donde trabajamos para
+          democratizar la presencia digital en Colombia.
+        </p>
+      </article>
+    </section>
+
+
+    <!-- ══════════════════════════════════
+         SECCIÓN 2 — Conclusiones sobre especificidad CSS
+         (Requerido por el profesor)
+    ══════════════════════════════════ -->
+    <section>
+      <h2>🎯 Especificidad en CSS</h2>
+      <article>
+
+        <h3>¿Qué es la especificidad?</h3>
+        <p>
+          La <strong>especificidad en CSS</strong> es el mecanismo que usa el navegador para
+          decidir qué regla de estilo aplicar cuando dos o más reglas apuntan al mismo
+          elemento. No siempre gana la última regla escrita — gana la más específica.
+        </p>
+        <p>
+          El navegador calcula un puntaje de especificidad en tres niveles:
+          <code>IDs</code> valen más que <code>clases</code>, y las clases valen más que
+          los <code>selectores de tipo</code> (etiquetas HTML). Por ejemplo,
+          <code>#titulo</code> siempre gana sobre <code>.titulo</code>, y este siempre
+          gana sobre <code>h1</code>.
+        </p>
+
+        <h3>Mis conclusiones</h3>
+        <p>
+          Entender la especificidad fue un cambio de mentalidad importante para mí.
+          Al principio escribía CSS de forma desordenada y no entendía por qué algunos
+          estilos no se aplicaban. Cuando aprendí que el navegador no lee el CSS como
+          nosotros — de arriba a abajo — sino que evalúa el <strong>peso de cada
+          selector</strong>, todo tuvo más sentido.
+        </p>
+        <p>
+          La lección más valiosa fue que <strong>escribir CSS con selectores simples y
+          de tipo</strong> (como hicimos en este ejercicio grupal) obliga a pensar mejor
+          la estructura del HTML desde el principio, porque no puedes depender de clases
+          e IDs para resolver conflictos. Eso hace el código más limpio y predecible.
+        </p>
+
+      </article>
+    </section>
+
+
+    <!-- ══════════════════════════════════
+         SECCIÓN 3 — Selectores avanzados
+         Lista con los que más costaron
+         (Requerido por el profesor)
+    ══════════════════════════════════ -->
+    <section>
+      <h2>🔍 Selectores que más me costaron</h2>
+      <article>
+        <ul>
+
+          <li>
+            <span>
+              <strong>Selector de descendiente (<code>ul li a</code>):</strong>
+              Al principio lo confundía con el selector hijo directo (<code>ul > li</code>).
+              La diferencia es que el descendiente aplica a cualquier nivel de profundidad,
+              mientras que el hijo directo solo aplica al nivel inmediato. Me costó
+              entender cuándo usar uno u otro sin afectar elementos que no quería.
+            </span>
+          </li>
+
+          <li>
+            <span>
+              <strong>Pseudo-elemento <code>::before</code> y <code>::after</code>:</strong>
+              No entendía que necesitaban obligatoriamente la propiedad <code>content</code>
+              para existir en el DOM, aunque sea vacía (<code>content: ''</code>). Una vez
+              que lo entendí, me pareció muy poderoso porque permite agregar decoraciones
+              visuales sin tocar el HTML.
+            </span>
+          </li>
+
+          <li>
+            <span>
+              <strong>Pseudo-clase <code>:nth-child()</code>:</strong>
+              Me costó entender que cuenta todos los hijos del padre, no solo los del
+              mismo tipo. Por ejemplo, <code>p:nth-child(2)</code> no selecciona el segundo
+              párrafo, sino el hijo número 2 del padre si resulta ser un párrafo. Eso
+              generaba comportamientos inesperados hasta que lo entendí bien.
+            </span>
+          </li>
+
+          <li>
+            <span>
+              <strong>Selector de atributo (<code>[href]</code>, <code>[type="text"]</code>):</strong>
+              No sabía que existía este tipo de selector. Me pareció muy útil para estilizar
+              enlaces específicos sin necesidad de clases, como distinguir enlaces externos
+              de internos usando <code>[href^="https"]</code>.
+            </span>
+          </li>
+
+        </ul>
+      </article>
+    </section>
+
+
+    <!-- ══════════════════════════════════
+         SECCIÓN 4 — Galería con :hover
+         (Requerido por el profesor)
+         3 imágenes que cambian de tamaño al pasar el cursor
+    ══════════════════════════════════ -->
+    <section>
+      <h2>🖼️ Galería de Proyectos</h2>
+      <article>
+        <p>
+          Cada imagen representa uno de mis proyectos. Pasa el cursor sobre ellas
+          para ver el efecto <code>:hover</code> — cambian de tamaño usando
+          <code>transform: scale()</code> sin JavaScript.
+        </p>
+
+        <!-- Las 3 figuras dentro de un div para el layout en grid -->
+        <div>
+
+          <figure>
+            <img src="https://placehold.co/400x220/111c2b/00e5a0?text=Sistema+de+Reservas"
+                 alt="Sistema de Reservas — Java y MySQL">
+            <figcaption>Sistema de Reservas — Java · MySQL · POO</figcaption>
+          </figure>
+
+          <figure>
+            <img src="https://placehold.co/400x220/111c2b/0a84ff?text=Chatbot+Python"
+                 alt="Chatbot en Python">
+            <figcaption>Chatbot en Python — JSON · Modular</figcaption>
+          </figure>
+
+          <figure>
+            <img src="https://placehold.co/400x220/111c2b/00b87d?text=Portafolio+Web"
+                 alt="Portafolio Web personal">
+            <figcaption>Portafolio Web — HTML · CSS · JS</figcaption>
+          </figure>
+
+        </div>
+      </article>
+    </section>
+
+
+    <!-- ══════════════════════════════════
+         SECCIÓN 5 — Explicación Mobile-First
+         (Requerido por el profesor)
+    ══════════════════════════════════ -->
+    <section>
+      <h2>📱 Metodología Mobile-First</h2>
+      <article>
+
+        <h3>¿Qué es Mobile-First?</h3>
+        <p>
+          <strong>Mobile-First</strong> es una metodología de diseño web que consiste en
+          escribir primero los estilos CSS para pantallas pequeñas (móviles) y luego
+          agregar reglas adicionales con <code>@media (min-width: ...)</code> para
+          adaptar el diseño a pantallas más grandes como tablets y computadores.
+        </p>
+        <p>
+          Es lo contrario al enfoque tradicional, donde se diseñaba primero para
+          escritorio y luego se "reducía" para móvil. El problema de ese enfoque es
+          que el código acumulaba muchas reglas para <em>deshacer</em> cosas en
+          pantallas pequeñas, volviéndose difícil de mantener.
+        </p>
+
+        <h3>Beneficios que identifiqué</h3>
+        <ul>
+          <li>
+            <span>
+              <strong>Código más limpio:</strong> Los estilos base son simples y directos.
+              Solo se agregan reglas cuando la pantalla es más grande, nunca se cancelan
+              estilos anteriores innecesariamente.
+            </span>
+          </li>
+          <li>
+            <span>
+              <strong>Prioridad en el contenido:</strong> Al diseñar para móvil primero,
+              te obligas a pensar qué es realmente importante mostrarle al usuario,
+              porque el espacio es limitado. Eso mejora la experiencia en todos los
+              dispositivos.
+            </span>
+          </li>
+          <li>
+            <span>
+              <strong>Rendimiento:</strong> Los dispositivos móviles cargan primero los
+              estilos base (más ligeros) y solo descargan las reglas adicionales si
+              el ancho de pantalla lo requiere.
+            </span>
+          </li>
+        </ul>
+
+        <h3>Cómo lo apliqué en el proyecto del perfil</h3>
+        <p>
+          En el componente de perfil grupal, escribí primero el
+          <code>.profile-container</code> con <code>grid-template-columns: 1fr</code>
+          para que en móvil la foto y la información se apilen verticalmente. Luego,
+          dentro del <code>@media (min-width: 768px)</code>, cambié a
+          <code>grid-template-columns: 260px 1fr</code> para activar las dos columnas
+          solo en escritorio. Así el sitio funciona bien desde el primer píxel en
+          cualquier dispositivo.
+        </p>
+
+      </article>
+    </section>
+
+  </main>
+
+
+  <!-- ══════════════════════════════════
+       FOOTER
+  ══════════════════════════════════ -->
+  <footer>
+    <p>© 2025 <strong>Elkin Andres Aldana Villafañe</strong> — Blog de Aprendizaje</p>
+    <p>Proyecto grupal <strong>SEA Startup</strong> · Ingeniería de Software · UMB</p>
+    <nav>
+      <ul>
+        <li><a href="../../index.html">SEA Startup</a></li>
+        <li><a href="../base.html">Perfil Equipo</a></li>
+        <li><a href="https://github.com/Elkinn77" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:elkinaladana.av@academia.umb.edu.co">Correo</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+</body>
+</html>

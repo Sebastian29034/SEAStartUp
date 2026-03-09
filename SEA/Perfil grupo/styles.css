@@ -1,0 +1,349 @@
+/* ════════════════════════════════════════════════
+   styles.css — Perfil Equipo SEA Startup
+   Equipo: Alexandra · Sebastián · Elkin
+   Metodología: Mobile-First
+   Identidad visual: SEA Startup
+   Restricción: Sin clases ni IDs adicionales
+════════════════════════════════════════════════ */
+
+
+/* ── Variables de SEA Startup ── */
+:root {
+  --negro:      #050a0e;
+  --oscuro:     #0d1b2a;
+  --card:       #111c2b;
+  --borde:      rgba(255, 255, 255, 0.07);
+  --verde:      #00e5a0;
+  --verde2:     #00b87d;
+  --azul:       #0a84ff;
+  --texto:      #e2eaf2;
+  --muted:      #7a93aa;
+  --blanco:     #ffffff;
+  --ff-titulo:  'Syne', sans-serif;
+  --ff-cuerpo:  'Outfit', sans-serif;
+}
+
+/* ── Reset básico ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background: var(--verde);
+  color: var(--negro);
+}
+
+/* ── Body con fondo oscuro de SEA ── */
+body {
+  font-family: var(--ff-cuerpo);
+  background-color: var(--negro);
+  color: var(--texto);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* Círculos decorativos de fondo */
+body::before {
+  content: '';
+  position: fixed;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 229, 160, 0.1) 0%, transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -150px;
+  left: -150px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(10, 132, 255, 0.07) 0%, transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+/* ════════════════════════════════════
+   CONTENEDOR PRINCIPAL
+   Mobile-First: una sola columna
+════════════════════════════════════ */
+.profile-container {
+  position: relative;
+  z-index: 1;
+  background: var(--card);
+  border: 1px solid var(--borde);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 860px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+
+  /* MOBILE: una sola columna apilada */
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+
+/* ════════════════════════════════════
+   HEADER — Foto/logo + nombre
+════════════════════════════════════ */
+.profile-container header {
+  background: linear-gradient(160deg, var(--oscuro), var(--card));
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.2rem;
+  position: relative;
+  border-bottom: 1px solid var(--borde);
+}
+
+/* Pseudo-elemento ::before — línea degradada SEA arriba */
+.profile-container header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--verde), var(--azul));
+}
+
+/* Pseudo-elemento ::after — resplandor verde detrás del logo */
+.profile-container header::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(0, 229, 160, 0.07), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Logo del equipo */
+.profile-container header img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--verde);
+  box-shadow: 0 0 20px rgba(0, 229, 160, 0.3);
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Pseudo-clase :hover en el logo */
+.profile-container header img:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 35px rgba(0, 229, 160, 0.5);
+}
+
+/* Nombre del equipo */
+.profile-container header h1 {
+  font-family: var(--ff-titulo);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--blanco);
+  letter-spacing: -0.5px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Pseudo-elemento ::after en h1 — subrayado verde SEA */
+.profile-container header h1::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--verde), var(--azul));
+  border-radius: 2px;
+  margin: 0.4rem auto 0;
+}
+
+
+/* ════════════════════════════════════
+   MAIN — Biografía + navegación
+════════════════════════════════════ */
+.profile-container main {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  background: var(--card);
+}
+
+/* Párrafo de bio */
+.profile-container main p {
+  font-family: var(--ff-cuerpo);
+  font-size: 0.97rem;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.85;
+  padding: 1.2rem 1.4rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border-left: 3px solid var(--verde);
+  position: relative;
+}
+
+/* Pseudo-elemento ::before — comillas decorativas */
+.profile-container main p::before {
+  content: '"';
+  font-size: 4rem;
+  font-family: Georgia, serif;
+  color: var(--verde);
+  opacity: 0.15;
+  position: absolute;
+  top: -12px;
+  left: 10px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+
+/* ════════════════════════════════════
+   MENÚ — Flexbox + selectores avanzados
+════════════════════════════════════ */
+.profile-container main nav {
+  border-top: 1px solid var(--borde);
+  padding-top: 1.5rem;
+}
+
+/* FLEXBOX en el menú */
+.profile-container main nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Pseudo-elemento ::before — punto decorativo sobre cada ítem */
+.profile-container main nav ul li::before {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 5px;
+  background: var(--verde);
+  border-radius: 50%;
+  margin: 0 auto 6px auto;
+  opacity: 0.6;
+}
+
+/* Selector descendiente: ul li a */
+.profile-container main nav ul li a {
+  display: block;
+  padding: 0.55rem 1.3rem;
+  font-family: var(--ff-titulo);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: none;
+  border-radius: 8px;
+  border: 1px solid var(--borde);
+  background: rgba(255, 255, 255, 0.03);
+  letter-spacing: 0.3px;
+  transition: color 0.25s ease,
+              background 0.25s ease,
+              border-color 0.25s ease,
+              transform 0.2s ease;
+}
+
+/* Pseudo-clase :hover */
+.profile-container main nav ul li a:hover {
+  color: var(--negro);
+  background: var(--verde);
+  border-color: var(--verde);
+  transform: translateY(-2px);
+}
+
+/* Pseudo-clase :active */
+.profile-container main nav ul li a:active {
+  transform: translateY(0);
+  background: var(--verde2);
+  border-color: var(--verde2);
+}
+
+/* Selector de atributo — enlace "Inicio SEA" destacado */
+.profile-container main nav ul li a[href="../index.html"] {
+  color: var(--verde);
+  border-color: rgba(0, 229, 160, 0.3);
+  background: rgba(0, 229, 160, 0.06);
+}
+
+.profile-container main nav ul li a[href="../index.html"]:hover {
+  color: var(--negro);
+  background: var(--verde);
+  border-color: var(--verde);
+}
+
+
+/* ════════════════════════════════════
+   MEDIA QUERY — Escritorio
+   min-width: 768px  (Mobile-First)
+════════════════════════════════════ */
+@media (min-width: 768px) {
+
+  body {
+    align-items: center;
+    padding: 3rem 2rem;
+  }
+
+  /* Grid de 2 columnas */
+  .profile-container {
+    grid-template-columns: 260px 1fr;
+    min-height: 300px;
+  }
+
+  /* Header ocupa toda la altura */
+  .profile-container header {
+    justify-content: center;
+    min-height: 100%;
+    border-bottom: none;
+    border-right: 1px solid var(--borde);
+  }
+
+  .profile-container header img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .profile-container header h1 {
+    font-size: 1.8rem;
+  }
+
+  /* Menú en fila con espaciado uniforme */
+  .profile-container main nav ul {
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+  }
+
+  .profile-container main nav ul li a {
+    padding: 0.6rem 1.6rem;
+    font-size: 0.88rem;
+  }
+
+}

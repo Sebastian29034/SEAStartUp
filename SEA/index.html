@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SEA Startup — Plataforma inteligente para crear tu página web con chatbot. Dominio .com.co, hosting y cotización automática.">
+  <title>SEA Startup | Tu Presencia Digital, Inteligente</title>
+
+  <!-- Fuentes tipográficas desde Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Hoja de estilos externa -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       HEADER — Encabezado y navegación principal del sitio
+  ══════════════════════════════════════ -->
+  <header>
+    <nav id="navbar" aria-label="Navegación principal">
+      <div class="contenedor">
+        <div class="nav-interno">
+
+          <!-- Logo con enlace al inicio -->
+          <a href="#inicio" class="nav-logo" aria-label="SEA Startup - Inicio">
+            <img src="https://i.ibb.co/pB1zB82N/Gemini-Generated-Image-n20ormn20ormn20o.png"
+                 alt="Logo SEA Startup"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="logo-fallback">SEA</div>
+            <span class="nav-logo-texto">SEA <span>Startup</span></span>
+          </a>
+
+          <!-- Menú de navegación principal -->
+          <ul class="nav-menu" id="navMenu" role="menubar">
+            <li role="none"><a href="/Perfil grupo/base.html" role="menuitem">Inicio</a></li>
+            <li role="none"><a href="#quienes" role="menuitem">Quiénes Somos</a></li>
+            <li role="none"><a href="#servicios" role="menuitem">Servicios</a></li>
+            <li role="none"><a href="#web-moderna" role="menuitem">Web Moderna</a></li>
+            <li role="none"><a href="#contacto" role="menuitem" class="nav-cta">Contáctanos</a></li>
+          </ul>
+
+          <!-- Botón hamburguesa para móvil -->
+          <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+            <span></span><span></span><span></span>
+          </button>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- ══════════════════════════════════════
+       MAIN — Contenido principal del sitio
+  ══════════════════════════════════════ -->
+  <main>
+
+    <!-- ══════════════════════════════════════
+         SECCIÓN INICIO — Banner principal (hero)
+    ══════════════════════════════════════ -->
+    <section id="inicio" aria-labelledby="titulo-inicio">
+      <div class="contenedor">
+        <div class="hero-grid">
+
+          <!-- Texto e información principal -->
+          <div class="hero-content">
+            <div class="hero-badge">Tu presencia digital, ahora</div>
+            <h1 class="hero-titulo" id="titulo-inicio">
+              Crea tu página web
+              <span class="linea2">con inteligencia</span>
+            </h1>
+            <p class="hero-desc">
+              SEA Startup te guía paso a paso desde la idea hasta tu sitio web publicado.
+              Nuestro chatbot inteligente recopila tus requerimientos, propone nombres de dominio
+              <strong>.com.co</strong> y genera una cotización personalizada en minutos.
+            </p>
+            <div class="hero-botones">
+              <a href="#contacto" class="btn-primario">Empezar ahora →</a>
+              <a href="#servicios" class="btn-secundario">Ver servicios</a>
+            </div>
+          </div>
+
+          <!-- Preview visual del chatbot -->
+          <div class="hero-visual">
+
+            <!-- Tarjeta flotante superior -->
+            <div class="hero-stat s1">
+              <span class="stat-icono">🌐</span>
+              <div>
+                <strong>+120</strong>
+                <span>Dominios .com.co activos</span>
+              </div>
+            </div>
+
+            <!-- Tarjeta principal con preview del chatbot -->
+            <div class="hero-tarjeta-main">
+              <div class="chat-cabecera">
+                <div class="chat-avatar">🤖</div>
+                <div class="chat-cabecera-txt">
+                  <strong>Asistente SEA</strong>
+                  <span>● En línea</span>
+                </div>
+              </div>
+              <div class="chatbot-preview">
+                <div class="burbuja bot">
+                  ¡Hola! Soy el asistente de SEA Startup. ¿Necesitas una página web para tu empresa o negocio? 😊
+                </div>
+                <div class="burbuja usuario">
+                  Sí, tengo una tienda de ropa y quiero vender en línea.
+                </div>
+                <div class="burbuja bot">
+                  ¡Perfecto! Aquí van 3 propuestas de dominio para ti:<br>
+                  <strong class="dominio">📌 tiendaropa.com.co</strong><br>
+                  <strong class="dominio">📌 modaclub.com.co</strong><br>
+                  <strong class="dominio">📌 mitienda.com.co</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tarjeta flotante inferior -->
+            <div class="hero-stat s2">
+              <span class="stat-icono">📄</span>
+              <div>
+                <strong>PDF listo</strong>
+                <span>Cotización generada</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         SECCIÓN QUIÉNES SOMOS
+    ══════════════════════════════════════ -->
+    <section id="quienes" class="seccion seccion-alt" aria-labelledby="titulo-quienes">
+      <div class="contenedor">
+
+        <div class="seccion-etiqueta">Quiénes Somos</div>
+        <h2 class="seccion-titulo" id="titulo-quienes">El equipo detrás de <span class="verde">SEA Startup</span></h2>
+        <p class="seccion-desc">
+          Tres ingenieros de software con una misión en común: hacer que la tecnología web
+          sea accesible para todos los colombianos.
+        </p>
+
+        <div class="quienes-grid">
+
+          <div class="quienes-visual">
+            <div class="logo-envoltorio">
+              <img src="https://i.ibb.co/pB1zB82N/Gemini-Generated-Image-n20ormn20ormn20o.png"
+                   alt="Logo oficial de SEA Startup"
+                   onerror="this.outerHTML='<div class=\'logo-texto-fallback\'>SEA</div>'">
+            </div>
+          </div>
+
+          <div>
+            <h3 class="historia-titulo">Nuestra Historia</h3>
+            <p class="historia-texto">
+              SEA Startup nació de la idea de tres estudiantes de Ingeniería de Software —
+              <strong>
+                <a href="/Perfil grupo/Perfiles/alexa.html">Alexandra</a>, 
+                <a href="/Perfil grupo/Perfiles/sebastian.html">Sebastián</a> y 
+                <a href="/Perfil grupo/Perfiles/elkin.html">Elkin</a>
+              </strong> 
+              — que identificaron un problema real:
+              muchas empresas y personas naturales en Colombia quieren tener presencia en internet,
+              pero el proceso de crear una página web les parece complejo, costoso y lleno de
+              decisiones técnicas que no entienden.
+            </p>
+            <p class="historia-texto">
+              Así creamos una plataforma que utiliza un <strong>chatbot inteligente</strong>
+              para guiar al usuario desde cero: define el nombre de su proyecto, elige dominio
+              <strong class="txt-verde">.com.co</strong>, selecciona su plan de hosting y recibe
+              una cotización profesional en PDF, todo en minutos y sin saber nada de tecnología.
+            </p>
+            <p class="historia-texto">
+              Atendemos tanto a <strong>empresas</strong> como a
+              <strong>personas naturales mayores de 18 años</strong>,
+              con planes adaptados a cada necesidad y presupuesto.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Tarjetas de misión, visión y valores -->
+        <div class="mvv-grid">
+
+          <div class="mvv-tarjeta mision">
+            <div class="mvv-icono">🎯</div>
+            <h3>Misión</h3>
+            <p>Democratizar la creación de páginas web en Colombia mediante tecnología inteligente, guiando a empresas y personas naturales para que tengan presencia digital profesional de forma sencilla, rápida y asequible.</p>
+          </div>
+
+          <div class="mvv-tarjeta vision">
+            <div class="mvv-icono">🚀</div>
+            <h3>Visión</h3>
+            <p>Ser la plataforma de referencia en Colombia para la creación y planificación de proyectos web, reconocida por la calidad de su tecnología, la experiencia de sus usuarios y el impacto en el ecosistema digital nacional.</p>
+          </div>
+
+          <div class="mvv-tarjeta valores">
+            <div class="mvv-icono">💡</div>
+            <h3>Valores Corporativos</h3>
+            <ul class="valores-lista">
+              <li>Innovación continua</li>
+              <li>Transparencia con el cliente</li>
+              <li>Accesibilidad e inclusión</li>
+              <li>Calidad sin excusas</li>
+              <li>Trabajo en equipo</li>
+              <li>Compromiso con Colombia</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         SECCIÓN SERVICIOS
+    ══════════════════════════════════════ -->
+    <section id="servicios" class="seccion" aria-labelledby="titulo-servicios">
+      <div class="contenedor">
+
+        <div class="seccion-etiqueta">Servicios</div>
+        <h2 class="seccion-titulo" id="titulo-servicios">Todo lo que necesitas para <span class="verde">tu web</span></h2>
+        <p class="seccion-desc">
+          Desde la idea inicial hasta el sitio publicado. Ofrecemos soluciones tecnológicas
+          completas para cada tipo de proyecto y presupuesto.
+        </p>
+
+        <div class="servicios-grid">
+
+          <div class="servicio-tarjeta">
+            <div class="serv-icono">🤖</div>
+            <h3>Chatbot de Onboarding</h3>
+            <p>Nuestro asistente inteligente recopila tus requerimientos en una conversación natural, sin formularios complicados. Define tu proyecto mientras chateas.</p>
+            <span class="serv-etiqueta">Gratuito</span>
+          </div>
+
+          <div class="servicio-tarjeta">
+            <div class="serv-icono">🌐</div>
+            <h3>Propuesta de Dominio .com.co</h3>
+            <p>El chatbot genera propuestas creativas de nombres de dominio adaptadas a tu sector y marca, verificando disponibilidad en tiempo real con extensión .com.co.</p>
+            <span class="serv-etiqueta">Incluido</span>
+          </div>
+
+          <div class="servicio-tarjeta">
+            <div class="serv-icono">🖥️</div>
+            <h3>Diseño y Desarrollo Web</h3>
+            <p>Creación de páginas web modernas, responsivas y optimizadas: sitios informativos, portafolios, blogs, tiendas online y plataformas a medida.</p>
+            <span class="serv-etiqueta">Plan Básico</span>
+          </div>
+
+          <div class="servicio-tarjeta">
+            <div class="serv-icono">🛒</div>
+            <h3>E-Commerce</h3>
+            <p>Tiendas virtuales completas con carrito de compras, pasarela de pagos, gestión de inventario y panel de administración. Vende 24/7 desde tu sitio web.</p>
+            <span class="serv-etiqueta">Plan Pro</span>
+          </div>
+
+          <div class="servicio-tarjeta">
+            <div class="serv-icono">☁️</div>
+            <h3>Hosting y Mantenimiento</h3>
+            <p>Alojamiento confiable en servidores Linux con alta disponibilidad, copias de seguridad automáticas, actualizaciones de seguridad y soporte técnico mensual.</p>
+            <span class="serv-etiqueta">Mensual</span>
+          </div>
+
+          <div class="servicio-tarjeta">
+            <div class="serv-icono">📄</div>
+            <h3>Cotización PDF Automática</h3>
+            <p>Al finalizar la conversación con nuestro chatbot, recibes un documento PDF profesional con la propuesta completa, precios desglosados y tiempos de entrega.</p>
+            <span class="serv-etiqueta">Automático</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         SECCIÓN WEB MODERNA — Fundamentos técnicos
+         Incluye article + aside con recursos externos
+    ══════════════════════════════════════ -->
+    <section id="web-moderna" class="seccion seccion-alt" aria-labelledby="titulo-web">
+      <div class="contenedor">
+
+        <div class="seccion-etiqueta">Fundamentos Web</div>
+        <h2 class="seccion-titulo" id="titulo-web">Fundamentos de la <span class="verde">Web Moderna</span></h2>
+        <p class="seccion-desc">
+          En SEA Startup aplicamos los principios de la ingeniería web moderna para construir
+          soluciones digitales sólidas, accesibles y mantenibles.
+        </p>
+
+        <!-- Grid: artículo + aside -->
+        <div class="academica-grid">
+
+          <!-- ARTÍCULO PRINCIPAL -->
+          <article aria-label="Fundamentos de ingeniería web aplicados en SEA Startup">
+
+            <h3>¿Qué es la Ingeniería Web?</h3>
+            <p>
+              La ingeniería web es la disciplina que aplica principios de ingeniería de software
+              al diseño, desarrollo y mantenimiento de aplicaciones y sistemas accesibles a través
+              de la web. A diferencia del desarrollo web tradicional, la ingeniería web incorpora
+              metodologías formales, control de calidad y gestión de proyectos para garantizar que
+              los productos digitales sean escalables, seguros y fáciles de mantener.
+            </p>
+            <p>
+              En SEA Startup aplicamos estos principios para construir plataformas que combinan
+              automatización conversacional con generación de documentos, todo bajo estándares
+              modernos de desarrollo web.
+            </p>
+
+            <h3>Arquitectura Cliente-Servidor</h3>
+            <p>
+              El modelo <strong>cliente-servidor</strong> es la base de casi toda aplicación web.
+              En este esquema, el <em>cliente</em> (el navegador del usuario) envía solicitudes a
+              través de internet, y el <em>servidor</em> las procesa y devuelve una respuesta con
+              los datos o recursos solicitados.
+            </p>
+
+            <!-- Diagrama visual cliente-servidor -->
+            <div class="diagrama-cs" role="img" aria-label="Diagrama de arquitectura cliente-servidor">
+              <div class="cs-nodo">
+                <div class="cs-icono cliente">💻</div>
+                <strong>Cliente</strong>
+                <span>Navegador web</span>
+              </div>
+              <div class="cs-flecha" aria-hidden="true">
+                <span>HTTP / HTTPS</span>
+              </div>
+              <div class="cs-nodo">
+                <div class="cs-icono servidor">🖥️</div>
+                <strong>Servidor</strong>
+                <span>Linux + Backend</span>
+              </div>
+            </div>
+
+            <p>
+              SEA Startup opera bajo esta arquitectura: el cliente accede a la plataforma desde
+              cualquier navegador compatible con Windows, mientras el servidor Linux procesa las
+              conversaciones del chatbot, consulta la base de datos y genera los PDF de cotización.
+            </p>
+
+            <h3>Semántica HTML5 y Diseño Accesible</h3>
+            <p>
+              El uso de <strong>HTML5 semántico</strong> significa elegir etiquetas que describan
+              el significado del contenido. Etiquetas como
+              <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>,
+              <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code> y
+              <code>&lt;footer&gt;</code> comunican estructura a los navegadores, los motores de
+              búsqueda y las tecnologías de asistencia.
+            </p>
+
+            <h3>Ventajas del HTML5 Semántico</h3>
+            <ul class="ventajas-lista">
+              <li>
+                <span><strong>Legibilidad del código:</strong> Etiquetas como
+                <code>&lt;nav&gt;</code> o <code>&lt;article&gt;</code> permiten a cualquier
+                miembro del equipo entender la estructura inmediatamente.</span>
+              </li>
+              <li>
+                <span><strong>Mejor posicionamiento (SEO):</strong> Los motores de búsqueda
+                leen la estructura semántica para indexar el contenido con mayor relevancia.</span>
+              </li>
+              <li>
+                <span><strong>Accesibilidad nativa:</strong> Los lectores de pantalla dependen
+                de la semántica para guiar a usuarios con discapacidad.</span>
+              </li>
+            </ul>
+
+          </article>
+
+          <!-- ASIDE — Recursos recomendados -->
+          <aside aria-label="Recursos recomendados sobre ingeniería web">
+            <div class="aside-recursos">
+              <h4>📚 Recursos Recomendados</h4>
+
+              <ul class="recursos-lista">
+                <li><a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank" rel="noopener noreferrer">MDN Web Docs — Referencia completa de HTML5</a></li>
+                <li><a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">W3C Validator — Validador oficial de HTML5</a></li>
+                <li><a href="https://web.dev/learn/html" target="_blank" rel="noopener noreferrer">web.dev — Aprende HTML moderno (Google)</a></li>
+              </ul>
+              <hr class="recursos-sep">
+
+              <ul class="recursos-lista">
+                <li><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener noreferrer">WCAG — Pautas de accesibilidad web (W3C)</a></li>
+                <li><a href="https://developer.mozilla.org/es/docs/Learn/Accessibility" target="_blank" rel="noopener noreferrer">MDN — Guía de accesibilidad web</a></li>
+              </ul>
+              <hr class="recursos-sep">
+
+              <ul class="recursos-lista">
+                <li><a href="https://developer.mozilla.org/es/docs/Learn/Server-side/First_steps/Client-Server_overview" target="_blank" rel="noopener noreferrer">MDN — Arquitectura cliente-servidor explicada</a></li>
+                <li><a href="https://www.linux.org/pages/download/" target="_blank" rel="noopener noreferrer">Linux.org — Servidor Linux (plataforma de SEA)</a></li>
+              </ul>
+              <hr class="recursos-sep">
+
+              <ul class="recursos-lista">
+                <li><a href="https://www.nic.co/" target="_blank" rel="noopener noreferrer">NIC.co — Registro oficial de dominios .com.co</a></li>
+              </ul>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         SECCIÓN CONTACTO
+    ══════════════════════════════════════ -->
+    <section id="contacto" class="seccion" aria-labelledby="titulo-contacto">
+      <div class="contenedor">
+
+        <div class="seccion-etiqueta">Contacto</div>
+        <h2 class="seccion-titulo" id="titulo-contacto">Hablemos de tu <span class="verde">proyecto</span></h2>
+        <p class="seccion-desc">
+          ¿Tienes una idea? Escríbenos y nuestro equipo te responderá en menos de 24 horas.
+        </p>
+
+        <div class="contacto-grid">
+
+          <!-- Información de contacto -->
+          <div>
+            <h3 class="contacto-info-titulo">Información de contacto</h3>
+            <p class="contacto-info-desc">Estamos disponibles para atenderte y resolver todas tus dudas sobre nuestros servicios.</p>
+
+            <div class="items-contacto">
+              <div class="item-contacto">
+                <div class="icono-contacto">📧</div>
+                <div>
+                  <strong>Correo electrónico</strong>
+                  <span>hola@seastartup.com.co</span>
+                </div>
+              </div>
+              <div class="item-contacto">
+                <div class="icono-contacto">📞</div>
+                <div>
+                  <strong>Teléfono / WhatsApp</strong>
+                  <span>+57 300 000 0000</span>
+                </div>
+              </div>
+              <div class="item-contacto">
+                <div class="icono-contacto">📍</div>
+                <div>
+                  <strong>Dirección</strong>
+                  <span>Colombia — Atención virtual a todo el país</span>
+                </div>
+              </div>
+              <div class="item-contacto">
+                <div class="icono-contacto">🕐</div>
+                <div>
+                  <strong>Horario de atención</strong>
+                  <span>Lunes a Viernes · 8:00 AM – 6:00 PM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulario de contacto -->
+          <div class="tarjeta-form" role="region" aria-label="Formulario de contacto">
+            <h3 class="form-titulo">Envíanos un mensaje</h3>
+
+            <form id="formularioContacto" novalidate>
+
+              <div class="form-fila">
+                <div class="form-grupo">
+                  <label for="nombre">Nombre completo *</label>
+                  <input type="text" id="nombre" name="nombre" placeholder="Ej: María García" required autocomplete="name">
+                </div>
+                <div class="form-grupo">
+                  <label for="email">Correo electrónico *</label>
+                  <input type="email" id="email" name="email" placeholder="tu@correo.com" required autocomplete="email">
+                </div>
+              </div>
+
+              <div class="form-grupo">
+                <label for="asunto">Asunto *</label>
+                <select id="asunto" name="asunto" required>
+                  <option value="" disabled selected>Selecciona un asunto</option>
+                  <option value="cotizacion">Solicitar cotización</option>
+                  <option value="dominio">Consulta de dominio .com.co</option>
+                  <option value="hosting">Planes de hosting</option>
+                  <option value="soporte">Soporte técnico</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+
+              <div class="form-grupo">
+                <label for="mensaje">Mensaje *</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos sobre tu proyecto o consulta..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-enviar">Enviar mensaje ✉️</button>
+
+            </form>
+
+            <!-- Panel de éxito post-envío -->
+            <div class="form-exito" id="exitoForm" role="alert" aria-live="polite">
+              <div class="icono-ok">✅</div>
+              <h3>¡Mensaje enviado!</h3>
+              <p>Gracias por contactarnos. Nuestro equipo te responderá en menos de 24 horas.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ══════════════════════════════════════
+       FOOTER — Pie de página
+  ══════════════════════════════════════ -->
+  <footer>
+    <div class="contenedor">
+
+      <div class="footer-top">
+
+        <!-- Logo, descripción y redes -->
+        <div class="footer-marca">
+          <a href="#inicio" class="footer-logo" aria-label="SEA Startup inicio">
+            <img src="https://i.ibb.co/pB1zB82N/Gemini-Generated-Image-n20ormn20ormn20o.png"
+                 alt="Logo SEA Startup"
+                 onerror="this.style.display='none'">
+            <span>SEA <em>Startup</em></span>
+          </a>
+          <p>Plataforma inteligente para la creación de páginas web. Atendemos a empresas y personas naturales en toda Colombia.</p>
+          <div class="redes-sociales" role="group" aria-label="Redes sociales de SEA Startup">
+            <a href="#" class="red-btn" aria-label="Instagram de SEA Startup">📷</a>
+            <a href="#" class="red-btn" aria-label="Facebook de SEA Startup">💼</a>
+            <a href="#" class="red-btn" aria-label="Twitter/X de SEA Startup">🐦</a>
+            <a href="#" class="red-btn" aria-label="LinkedIn de SEA Startup">🔗</a>
+            <a href="#" class="red-btn" aria-label="WhatsApp de SEA Startup">💬</a>
+          </div>
+        </div>
+
+        <!-- Navegación -->
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#quienes">Quiénes Somos</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#web-moderna">Web Moderna</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Servicios -->
+        <div class="footer-col">
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="#servicios">Chatbot de Onboarding</a></li>
+            <li><a href="#servicios">Dominio .com.co</a></li>
+            <li><a href="#servicios">Diseño Web</a></li>
+            <li><a href="#servicios">E-Commerce</a></li>
+            <li><a href="#servicios">Hosting</a></li>
+          </ul>
+        </div>
+
+        <!-- Contacto en footer -->
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:hola@seastartup.com.co">📧 hola@seastartup.com.co</a></li>
+            <li><a href="tel:+573000000000">📞 +57 300 000 0000</a></li>
+            <li><a href="#contacto">📍 Colombia</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Derechos reservados -->
+      <div class="footer-bottom">
+        <p>© 2025 <a href="#inicio">SEA Startup</a>. Todos los derechos reservados.</p>
+        <p>Desarrollado por <strong class="txt-verde">Alexandra · Sebastián · Elkin</strong> — Ingeniería de Software</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Script externo -->
+  <script src="script.js"></script>
+
+</body>
+</html>
